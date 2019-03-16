@@ -17,7 +17,7 @@ for k=1:10
   prec = prec/2;
   stepSize = 0.7*stepSize;
   opt = odeset('AbsTol',prec,'MaxStep',stepSize);
-  fprintf('RelTol=%.3e  StepSize=%.3e  ',prec,stepSize);
+  fprintf('AbsTol=%.3e  StepSize=%.3e  ',prec,stepSize);
   tic
   [t,y] = ode45(@fangeregt, [0:100], y0,opt);
   toc
