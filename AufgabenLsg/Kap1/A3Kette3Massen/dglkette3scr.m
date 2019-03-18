@@ -1,26 +1,21 @@
 clear all; clc
 global c1 c2 c3 c4;   % Federkonstanten
 global m1 m2 m3;      % Massen
-
 m = 1.0;
 m1 = m;  m2 = m;  m3 = m;
 c = 1;
 c1 = c;  c2 = c;  c3 = c;  c4 = c;
-
 % Anfangsbedingungen
 y0 = zeros(6,1);
 y0(1,1) = -0.4;  % y(1,1)   x1(t)    Auslenkung masse 1
 y0(3,1) = 0.6;   % y(3,1)   x2(t)    Auslenkung masse 2
 y0(5,1) = 0.3;   % y(5,1)   x3(t)    Auslenkung masse 3
-
 % Lösung der DGL
 [t, y] = ode45(@fkette3,[0:0.1:10],y0);
-
-disp('Auslenkungen zur Zeit t=20')
+disp('Auslenkungen zur Zeit t=10')
 fprintf('  x1 = %.5f\n',y(end,1));
 fprintf('  x2 = %.5f\n',y(end,3));
 fprintf('  x3 = %.5f\n',y(end,5));
-
 subplot(3,1,1);  
 plot(t, y(:,1));    
 title( sprintf('Masse 1  x1(t=0) = %.2f\n',y0(1,1)) );
@@ -65,7 +60,7 @@ y1(6,1) =  0;     % y(6,1)   x3'(t)   Geschwindigkeit masse 3
 
 % Lösung der DGL
 [t, y] = ode45(@fkette3,[0:0.1:10],y1);
-disp('Auslenkungen zur Zeit t=20')
+disp('Auslenkungen zur Zeit t=10')
 fprintf('  x1 = %.5f\n',y(end,1));
 fprintf('  x2 = %.5f\n',y(end,3));
 fprintf('  x3 = %.5f\n',y(end,5));
