@@ -4,12 +4,12 @@ function [ note ] = bestegesamtnote( pt )
   end
   note = NaN;
   for k=1:length(pt)
-     if isscalar(pt(k).cad) && isscalar(pt(k).informatik)
-        n = pt(k).cad + pt(k).informatik;
-        if n < note || isnan(note)
-           note = n;
-        end
-     end
+    if isscalar(pt(k).cad) && isscalar(pt(k).informatik)
+      n = pt(k).cad + pt(k).informatik;
+      if n < note || isnan(note)
+         note = n;
+      end
+    end
   end
   note = note/2;
 end
