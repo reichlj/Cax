@@ -5,18 +5,19 @@ namen = fieldnames(st);
 disp('Anzahl der Feldnamen : ')
 disp(length(namen))
 
-disp('Feldnamen mit for : ')
+disp('Feldnamen mit for - cell arrays')
 for k=1:length(namen)
     fprintf('  k=%3d : %s\n',k,namen{k})
 end
 
-disp('Feldnamen mit while : ')
+disp('Feldnamen mit while - cell arrays')
 k=1;
 while k <= length(namen)
     fprintf('  k=%3d : %s\n',k,namen{k})
     k = k + 1;
 end
 
+disp('Verwende cell-arrays:')
 minindex = 1;
 maxindex = 1;
 for k=2:length(namen)
@@ -27,5 +28,5 @@ for k=2:length(namen)
         maxindex = k;
     end
 end
-fprintf('kürzester Name: %s\n',namen{minindex})
-fprintf('längster Name : %s\n',namen{maxindex})
+fprintf('  kürzester Name: %s\n',namen{minindex})
+fprintf('  längster Name : %s\n',namen{maxindex})
