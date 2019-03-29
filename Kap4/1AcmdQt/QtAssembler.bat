@@ -1,0 +1,1 @@
+gcc -S -o Bsp1asm.s -Wall Bsp1.c

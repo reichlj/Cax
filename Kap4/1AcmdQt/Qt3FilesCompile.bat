@@ -1,0 +1,1 @@
+gcc -Wall Bsp2.c Bsp2Function.c -o Bsp2.exe

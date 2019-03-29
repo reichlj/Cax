@@ -1,0 +1,1 @@
+gcc -Wall Bsp1.c
