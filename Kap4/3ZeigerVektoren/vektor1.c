@@ -12,9 +12,9 @@ int main(void)
  printf("A: z[1]=%f\n", z[1]);
  vektorAdd1(&x[0],&y[0],&z[0],3);
  printf("B: z[1]=%f\n", z[1]);
- vektorAdd2(x,y,z,3);
+ vektorAdd2(x,y,z,N);
  printf("C: z[1]=%f\n", z[1]);
- vektorAdd2(&x[0],&y[0],&z[0],3);
+ vektorAdd2(&x[0],&y[0],&z[0],N);
  printf("D: z[1]=%f\n", z[1]);
  return 0;
 }
