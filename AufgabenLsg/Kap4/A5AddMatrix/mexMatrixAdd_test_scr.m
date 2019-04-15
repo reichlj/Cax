@@ -11,13 +11,13 @@ assert(max(abs(DC(:))) < 1.0e-10, '1000*1000-Matrix Addition falsch')
 try 
    A = rand(100);  B = rand(200);
    C = mexMatrixAdd(A,B);
-   assert(false, 'Fehler bei unterschiedlicher nicht erkannt')
+   assert(false, '2d-Arrays unterschiedlicher Größe: Fehler nicht erkannt')
 catch 
 end
 try 
    A = rand(10);  B = rand(20,20,30);
    C = mexMatrixAdd(A,B);
-   assert(false, 'Fehler bei unterschiedlicher nicht erkannt')
+   assert(false, 'Fehler bei Addition von 1d und 3d nicht erkannt')
 catch 
 end
 try 
