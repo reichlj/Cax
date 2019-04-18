@@ -7,7 +7,7 @@ function [s, varargout] = mysize(a)
        varargout = cell(1,nout-1);
    end
    s = size(a);
-   for k=1:min(length(s),nout)
+   for k=1:min(length(s),nout-1)
        varargout{k} = s(k);
    end
 end
