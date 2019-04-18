@@ -1,21 +1,16 @@
-clear; clc
-% Primitives Testskript - Test bricht in Zeile 13 ab
-disp('*** T1: Zwei Zeilenvektoren')
+%shared variables
 x = [2 3 4];
 y = [20 30 40];
+%% Test 1: 2 Zeilenvektoren
 assert( mexDot(x,y) == dot(x,y), 'Fehler bei Zeilenvektoren')
-
-disp('*** T2: Zeilen- und Spaltenvektoren')
+%% Test 2: 2 Zeilen- und Spaltenvektor)
 y1 = [20; 30; 40];
 assert( mexDot(x,y) == dot(x,y), 'Fehler bei Zeilen- und Spaltenvektor')
-
-disp('*** T3: Anzahl der Argumente falsch')
+%% Test 3: fehlender Parameter
 ergc = mexDot(x)
-
-disp('*** T4: Vektoren unterschiedlicher Laenge')
+%% Test 4: Vektoren nicht gleich lang
 x1 = [2 3 4 5];
 ergd = mexDot(x,x1);
-
-disp('*** T5: Vektor und Matrix')
+%% Test 5: Vektor und Matrix
 y = [20 30 40;21,22,23];
 ergd = mexDot(x,y);

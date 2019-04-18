@@ -1,4 +1,5 @@
 clear; clc
+% besseres primitives Testskript - Test bricht bei T3 nicht ab
 disp('*** T1: Zwei Zeilenvektoren')
 x = [2 3 4];
 y = [20 30 40];
