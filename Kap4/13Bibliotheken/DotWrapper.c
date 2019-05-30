@@ -14,8 +14,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
   length2 = getVectorLength(prhs[1]);
   if ( (length1==-1) || (length2==-1) || (length1!=length2) ) {
      char str[80];
-     sprintf(str, "Length: Vektor1: %d Vektor2: %d\n",
-                  length1, length2);
+     sprintf(str, "Length: Vektor1: %d Vektor2: %d",length1, length2);
      mexErrMsgTxt(str);
   }
   zeiger_x = mxGetPr(prhs[0]); 
