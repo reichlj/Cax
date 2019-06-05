@@ -12,7 +12,7 @@ assert( mexDot(x,y) == dot(x,y), 'Fehler bei Zeilen- und Spaltenvektor')
 disp('*** T3: Anzahl der Argumente falsch')
 try 
     ergc = mexDot(x)
-    assert(False,'Fehler bei einem Aufrufparameter nicht gefunden')
+    disp('T3-Fehler: diese Zeile sollte nicht erreicht werden')
 catch E
     fprintf('Fehler bei einem Aufrufparameter gefunden\n')
     disp(E.message)
@@ -22,7 +22,7 @@ disp('*** T4: Vektoren unterschiedlicher Laenge')
 x1 = [2 3 4 5];
 try 
     ergd = mexDot(x,x1);
-    assert(False,'Fehler bei Vektoren unterschiedlicher Länge nicht gefunden')
+    disp('T4-Fehler: diese Zeile sollte nicht erreicht werden')
 catch E
     fprintf('Fehler bei Vektoren unterschiedlicher Länge gefunden\n')
     disp(E.message)
@@ -32,7 +32,7 @@ disp('*** T5: Vektor und Matrix')
 y = [20 30 40;21,22,23];
 try 
     ergd = mexDot(x,y);
-    assert(False,'Fehler bei Vektor und Matrix nicht gefunden')
+    disp('T5-Fehler: diese Zeile sollte nicht erreicht werden')
 catch E
     fprintf('Fehler bei Vektor und Matrix gefunden\n')
     disp(E.message)
