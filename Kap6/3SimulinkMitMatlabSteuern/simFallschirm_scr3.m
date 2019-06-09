@@ -5,6 +5,8 @@ open_system(modelName, 'loadonly')
 %open_system(modelName)  % Simulink Modell wird angezeigt
 %load_system(modelName)
 % bdroot Return name of top-level Simulink system
+% nach open ist bdroot='fallschirm3'
+% hws = get_param(modelName, 'modelworkspace');
 hws = get_param(bdroot, 'modelworkspace');
 hws.DataSource = 'Model File';
 hws.assignin('h0', 500);

@@ -5,7 +5,6 @@ simOut = sim('fallschirm1',...
              'SaveFormat','Array');
 t = simOut.get('tout');         
 y = simOut.get('yout');   
-fprintf('tend=%6.2f  vend=%6.2fm/s\n',...
-        t(end),y(end,2));
+fprintf('tend=%6.2f  vend=%6.2fm/s\n',t(end),y(end,2));
 
          
