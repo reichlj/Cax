@@ -3,10 +3,10 @@ function pvaluev2Test()
   checkPvalue([1, -4, 0, 7],x)
   checkPvalue([1; -4; 0; 7],x)
   checkPvalue([1, -4, 0, 7],[x;1.2, 1.3;3.1, 3.3])
-  checkPvalue([],x)
+  %checkPvalue([],x)
   checkPvalue(0,x)
   checkPvalue([1, -4, 0, 7],[])
-  checkPvalue([],[])  
+  %checkPvalue([],[])  
   
 end
 

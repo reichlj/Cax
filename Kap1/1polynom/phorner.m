@@ -1,5 +1,5 @@
 function [ y ] = phorner( a, x )
-  if ~ ( isempty(a) || isvector(a) )
+  if ~isvector(a)|| (isvector(a) && isempty(a))
       error("No valid polynom");
   end
   y = zeros(size(x));
