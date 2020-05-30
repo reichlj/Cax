@@ -14,9 +14,9 @@ int main(void)
   printf("zg_int     = %p\n",zg_int);
   printf("zg_double  = %p\n",zg_double);
 
-  printf("sizeof(int)      = %d\n",sizeof(k));
-  printf("sizeof(double)   = %d\n",sizeof(x));
-  printf("sizeof(zg_int)   = %d\n",sizeof(zg_int));
-  printf("sizeof(zg_double)= %d\n",sizeof(zg_double));
+  printf("sizeof(int)      = %I64u\n",sizeof(k));
+  printf("sizeof(double)   = %I64u\n",sizeof(x));
+  printf("sizeof(zg_int)   = %I64u\n",sizeof(zg_int));
+  printf("sizeof(zg_double)= %I64u\n",sizeof(zg_double));
 }
 
