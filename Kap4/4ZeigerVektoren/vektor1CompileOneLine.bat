@@ -1,0 +1,1 @@
+gcc -Wall VektorAdd.c vektor1.c -o vektor1.exe
