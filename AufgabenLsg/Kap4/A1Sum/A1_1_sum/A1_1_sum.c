@@ -12,15 +12,17 @@ int main(int argc, char *argv[])
    }
    sum = myAdd(argc-1, argv+1);
    //sum = myAdd(argc-1, &argv[1]);
-   printf("Summe = %.2f", sum);
+   printf("Summe1 = %.2f\n", sum);
    return 0;
 }
 
 double myAdd(int n, char *zahl[])
 {
   double sum=0, a;
+  char *z_k;
   int k;
   for (k=0; k < n; k++) {
+      z_k = zahl[k];
       a = strtod(zahl[k],0);
       sum = sum + a;
   }

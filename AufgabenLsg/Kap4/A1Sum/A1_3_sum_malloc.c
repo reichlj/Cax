@@ -4,24 +4,26 @@ double myAdd(int n, double x[]);
 
 int main(int argc, char *argv[])
 {
-   double sum,y[1000];
+   double sum, *sp;
    int k;
    if ( argc < 2) {
      printf("Fehler\n");
      printf("  Aufruf: %s z1 ...", argv[0]);
      return -1;
    } 
-   else if (argc> 1001) {
-     printf("Fehler\n");
-     printf("  Aufruf: %s z1 ...\n", argv[0]);
-     printf("          maximal 1000 Zahlen erlaubt!");
-     return -1;
+   sp = malloc((argc-1)*sizeof(double));
+   if (sp == NULL) {
+	   printf("Fehler bei malloc");
+       return -2;
    }
-   for (k=1;k<argc;k++) {
-	   y[k-1] = strtod(argv[k],0);
+   for (k=1; k<argc; k++) {
+	   *(sp+k-1) = strtod(argv[k],0);
    }	   
-   sum = myAdd(argc-1, y);
-   printf("Summe = %.2f", sum);
+   sum = myAdd(argc-1, sp);
+   printf("Summe3 = %.2f\n", sum);
+   if (sp != NULL) {
+      free(sp);
+   }
    return 0;
 }
 
