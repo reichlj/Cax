@@ -3,7 +3,6 @@
 
 int getVectorLength(const mxArray *zg); 
 
-/* berechne das Skalarprodukt von zwei Vektoren */
 void mexFunction(int nlhs, mxArray *plhs[], 
           int nrhs, const mxArray *prhs[]){  
     

@@ -1,0 +1,1 @@
+mex -output mexArrayMult mexArrayMult.c

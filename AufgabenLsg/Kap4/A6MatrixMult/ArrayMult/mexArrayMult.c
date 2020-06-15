@@ -5,6 +5,34 @@ void rowMajor2ColumnMajor(int rows,int cols,double a[][cols], double *zga);
 void columnMajor2RowMajor(int rows,int cols,double a[][cols], double *zga); 
 void arrayMult(int n,int m, int k, double a[][m], double b[][k], double c[][k]); 
 
+void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])           
+{  
+   int n,m,k,m1;
+   double *zga, *zgb, *zgc;
+   char err[100];  // speichert Fehlermeldung
+   n = mxGetM(prhs[0]); // Zeilen der Matrix a -  (n,m) * (m,k) = (n,k)
+   m = mxGetN(prhs[0]); // Spalten der Matrix a
+   m1 = mxGetM(prhs[1]); // Zeilen der Matrix b 
+   k = mxGetN(prhs[1]); // Spalten der Matrix b
+   if (m != m1)  {
+       sprintf(err,"m=%d ungleich m1%d",m,m1);
+       mexErrMsgTxt(err);
+   } 
+   double(*a)[m] = mxMalloc(n*m*sizeof(double));
+   double(*b)[k] = mxMalloc(m*k*sizeof(double));
+   double(*c)[k] = mxMalloc(n*k*sizeof(double));
+   zga = mxGetPr(prhs[0]); // Adresse erstes Element der Matlab-Matrix a
+   zgb = mxGetPr(prhs[1]); // Adresse erstes Element der Matlab-Matrix b
+   // Speicherplatz für das Ergebnis reservieren - eine Matrix
+   plhs[0] = mxCreateDoubleMatrix(n,k,mxREAL); 
+   zgc = mxGetPr(plhs[0]); 
+   // Matrix im C-Format speichern - zeilenweise
+   rowMajor2ColumnMajor(n, m, a, zga);
+   rowMajor2ColumnMajor(m, k, b, zgb);
+   arrayMult(n, m, k, a, b, c); // (n,m) * (m,k) = (n,k)
+   columnMajor2RowMajor(n, k, c, zgc);
+   mxFree(a);   mxFree(b);  mxFree(c);
+}
 
 
 void arrayMult(int n, int m, int k, double a[][m],double b[][k],double c[][k]) 

@@ -1,0 +1,1 @@
+mex -output mexMatrixAdd mexMatrixAdd.c

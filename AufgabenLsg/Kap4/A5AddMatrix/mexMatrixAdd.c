@@ -4,7 +4,7 @@ void checkDimensions(int nrhs, const mxArray *prhs[]);
 
 /* addiere zwei Matrizen */
 void mexFunction(int nlhs, mxArray *plhs[], 
-          int nrhs, const mxArray *prhs[]){  
+          int nrhs, const mxArray *prhs[]) {  
    double *zga,*zgb,*zgc;
    int N,M;
 

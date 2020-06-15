@@ -13,20 +13,20 @@ assert(max(abs(DC(:))) < 1.0e-8, '1000*1000-Matrix Addition falsch')
 try 
    A = rand(100);  B = rand(200);
    C = mexMatrixAdd(A,B);
-catch E
-   assert(isobject(E),'2d-Arrays unterschiedlicher Größe: Fehler nicht erkannt')    
+   assert(false, '2d-Arrays unterschiedlicher Größe: Fehler nicht erkannt')
+catch 
 end
 %% Test 3: Addiere 2d und 3d Matrizen
 try 
    A = rand(10);  B = rand(20,20,30);
    C = mexMatrixAdd(A,B);
-catch E
-   assert(isobject(E),'Fehler bei Addition von 1d und 3d nicht erkannt')    
+   assert(false, 'Fehler bei Addition von 1d und 3d nicht erkannt')
+catch 
 end
 %% Test 4: fehlender Aufrufparameter
 try 
    A = rand(10);
    C = mexMatrixAdd(A);
-catch E
-   assert(isobject(E),'Fehlender Aufrufparameter nicht erkannt')
+   assert('Fehlender Aufrufparameter nicht erkannt')
+catch 
 end
