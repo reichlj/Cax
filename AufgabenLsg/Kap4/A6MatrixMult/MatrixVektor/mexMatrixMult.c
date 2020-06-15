@@ -67,12 +67,13 @@ void rowMajor2ColumnMajor(int rows,int cols,double a[][cols], double *zga)
 void printCMatrix(int rows,int cols,double a[][cols]) 
 {
    int i,j;
+   mexPrintf("Mex Function Matrix %d*%d\n",rows,cols);   
    for (i=0; i<rows; i++) 
    {
        for (j=0; j<cols; j++) 
        {
-           printf("%5.1f",a[i][j]);   
+           mexPrintf("%5.1f",a[i][j]);   
        }
-       printf("\n");   
+       mexPrintf("\n");   
    }   
 }

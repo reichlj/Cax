@@ -5,7 +5,7 @@ C = mexArrayMult(A,B);
 C1 = A*B;
 assert(norm(C(:)-C1(:))< 1.e-10, 'Multiplikation 8*12 * 12*14')
 
-%% Test 3: 3*3-Matrix
+%% Test 2: 3*3-Matrix
 A = [2 3 4;
      4 5 6;
      7 8 9];
