@@ -1,8 +1,5 @@
 clear all
-simOut = sim('swGedaempft',...
-             'SaveTime','on', ...
-             'SaveOutput','on', ...
-             'SaveFormat','Array');
+simOut = sim('swGedaempft')
 t = simOut.get('tout');         
 y = simOut.get('yout');  
 vsum = 0.0;
