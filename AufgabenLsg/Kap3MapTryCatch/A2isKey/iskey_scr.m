@@ -8,10 +8,10 @@ while true
    if startsWith(month,'end','IgnoreCase',true)
       break
    end
-   try
+   if isKey(rain,month)
       value = rain(month);
       fprintf('Regen im Monat %s %.2f\n',month,value)
-   catch me
+   else
       fprintf('Keine Daten für Monat %s\n',month)        
    end
 end
